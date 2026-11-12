@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Con mucho cariño, la familia la invita a celebrar sus 70 años.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danielbabun.github.io/koki-70/">
+<meta property="og:title" content="Koki: los 70 años de la señora Keiko">
+<meta property="og:description" content="Con mucho cariño, la familia la invita a celebrar sus 70 años.">
+<meta property="og:image" content="https://danielbabun.github.io/koki-70/vista.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#5B3A78">
+<title>Koki de la señora Keiko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Washi claro con pliegues: cada sección es una hoja doblada en diagonal; grullas de origami vuelan entre ellas. Morado del koki (70 años) como color principal. Un solo mundo claro, a propósito. */
+:root{
+  --washi:#F5F0E6; --washi2:#EAE2D2; --kinari:#FBF8F1;
+  --murasaki:#5B3A78; --murasaki2:#7A57A0; --fuji:#B7A3D3;
+  --sumi:#211D1A; --sumi-suave:#5A524B;
+  --kin:#B08D4A; --kin-claro:#D9C08A;
+  --shu:#C23B2B;
+  --mincho:"Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --gothic:"Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --fs-base:clamp(17px, .95rem + .3vw, 20px);
+  --fs-label:clamp(16px, .85rem + .2vw, 17px);
+  --fs-h2:clamp(34px, 1.5rem + 2.6vw, 58px);
+  --gutter:clamp(16px, 5vw, 72px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--washi);color:var(--sumi);font-family:var(--gothic);font-size:var(--fs-base);line-height:1.75;overflow-x:hidden}
+/* fibras del washi */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .55  0 0 0 0 .48  0 0 0 0 .38  0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E")}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--mincho);font-weight:600;margin:0;line-height:1.15;text-wrap:balance}
+p{margin:0}
+.rotulo{display:inline-flex;align-items:center;gap:.6em;font-weight:500;font-size:var(--fs-label);letter-spacing:.2em;text-transform:uppercase;color:var(--murasaki)}
+.rotulo::before{content:"";width:2.2em;height:1px;background:currentColor}
+.kanji-rot{font-family:var(--mincho);font-weight:800;letter-spacing:0;text-transform:none}
+
+/* ---------- Portada ---------- */
+.portada{position:relative;padding:clamp(56px,10vh,120px) var(--gutter) clamp(80px,12vh,140px);overflow:hidden;isolation:isolate}
+.portada-grid{position:relative;z-index:1;max-width:72rem;margin:0 auto;display:grid;gap:clamp(28px,5vw,64px);align-items:center}
+.tategaki{font-family:var(--mincho);font-weight:800;writing-mode:vertical-rl;font-size:clamp(84px,3rem + 9vw,190px);line-height:1;color:var(--murasaki);letter-spacing:.06em;justify-self:center;position:relative}
+.tategaki small{display:block;font-size:.2em;font-weight:600;color:var(--sumi-suave);letter-spacing:.3em;margin-inline-start:.5em}
+.portada-txt{display:grid;gap:clamp(14px,2.4vh,24px);justify-items:center;text-align:center}
+h1{font-size:clamp(40px,1.6rem + 4.4vw,92px);font-weight:600;color:var(--sumi)}
+h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);letter-spacing:.06em;margin-bottom:.35em;font-weight:500}
+.bajada{font-family:var(--mincho);font-size:clamp(20px,1rem + .9vw,27px);color:var(--sumi-suave);max-width:28ch}
+.fecha-hero{font-family:var(--mincho);font-size:clamp(20px,1rem + .8vw,26px);letter-spacing:.08em;color:var(--sumi);font-variant-numeric:lining-nums}
+.fecha-hero span{color:var(--kin)}
+.hanko{width:clamp(56px,6vw,74px);aspect-ratio:1;max-width:100%;display:grid;place-items:center;background:var(--shu);color:var(--kinari);font-family:var(--mincho);font-weight:800;font-size:clamp(28px,1rem + 1.6vw,40px);border-radius:8px;transform:rotate(-4deg);box-shadow:inset 0 0 0 3px var(--shu),inset 0 0 0 5px color-mix(in srgb,var(--kinari) 70%,transparent);opacity:.92}
+
+/* grullas */
+.grulla{position:absolute;pointer-events:none;overflow:visible}
+.grulla .ala{transform-box:fill-box;transform-origin:50% 100%;animation:aleteo 3.2s ease-in-out infinite alternate}
+.grulla .ala.d{animation-delay:-.4s}
+@keyframes aleteo{to{transform:scaleY(.82) skewX(-4deg)}}
+.vuela{animation:vuela 14s ease-in-out infinite alternate}
+@keyframes vuela{to{transform:translate(-18px,-22px) rotate(-3deg)}}
+.g1{width:clamp(150px,22vw,300px);right:-2%;top:6%}
+.g2{width:clamp(80px,10vw,140px);left:3%;bottom:10%;animation-duration:11s;animation-direction:alternate-reverse}
+.g3{width:clamp(60px,7vw,100px);right:18%;bottom:6%;animation-duration:9s}
+.armado polygon{animation:plegar .9s cubic-bezier(.2,.8,.2,1) both;transform-box:fill-box;transform-origin:center}
+.armado polygon:nth-child(2){animation-delay:.08s}.armado polygon:nth-child(3){animation-delay:.16s}
+.armado polygon:nth-child(4){animation-delay:.24s}.armado polygon:nth-child(5){animation-delay:.32s}
+.armado polygon:nth-child(6){animation-delay:.4s}.armado polygon:nth-child(7){animation-delay:.48s}
+.armado polygon:nth-child(8){animation-delay:.56s}.armado polygon:nth-child(9){animation-delay:.64s}
+@keyframes plegar{from{transform:scale(.2) rotate(-30deg);opacity:0}}
+
+/* hoja doblada: pliegue diagonal */
+.hoja{position:relative;isolation:isolate}
+.hoja::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--ang,155deg),var(--h1) 0 49.8%,var(--h2) 50.2% 100%)}
+.pliegue{display:block;width:100%;height:clamp(40px,6vw,80px)}
+
+/* ---------- Koki ---------- */
+.koki{--h1:var(--murasaki);--h2:#53346E;--ang:160deg;color:var(--kinari);padding:clamp(50px,8vw,110px) var(--gutter)}
+.koki::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.13;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23F5F0E6' stroke-width='1.6'%3E%3Cpath d='M0 40a40 40 0 0 1 80 0M10 40a30 30 0 0 1 60 0M20 40a20 20 0 0 1 40 0M30 40a10 10 0 0 1 20 0'/%3E%3Cpath d='M-40 20a40 40 0 0 1 80 0M-30 20a30 30 0 0 1 60 0M-20 20a20 20 0 0 1 40 0M40 20a40 40 0 0 1 80 0M50 20a30 30 0 0 1 60 0M60 20a20 20 0 0 1 40 0'/%3E%3C/g%3E%3C/svg%3E")}
+.koki-wrap{max-width:62rem;margin:0 auto;display:grid;gap:clamp(24px,4vw,48px);align-items:center}
+.koki .rotulo{color:var(--kin-claro)}
+.koki h2{font-size:var(--fs-h2)}
+.koki-txt{display:grid;gap:16px}
+.koki-txt p{color:color-mix(in srgb,var(--kinari) 88%,transparent);max-width:38rem}
+.koki-kanji{font-family:var(--mincho);font-weight:800;font-size:clamp(90px,3rem + 8vw,170px);line-height:1;color:var(--kin-claro);display:flex;gap:.08em;justify-content:center}
+.koki-kanji span{display:grid;justify-items:center;gap:.25em}
+.koki-kanji small{font-family:var(--gothic);font-weight:500;font-size:var(--fs-label);letter-spacing:.14em;color:var(--kinari)}
+
+/* ---------- Cuenta ---------- */
+.cuenta{padding:clamp(50px,8vw,100px) var(--gutter);text-align:center}
+.cuenta-wrap{max-width:60rem;margin:0 auto;display:grid;gap:clamp(22px,3.5vw,36px);justify-items:center}
+.cuenta h2{font-size:var(--fs-h2)}
+.reloj{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,2.6vw,30px)}
+.pieza{position:relative;width:clamp(120px,14vw,160px);aspect-ratio:1;max-width:100%;display:grid;place-content:center;justify-items:center;gap:2px;filter:drop-shadow(0 8px 12px rgba(60,40,80,.16))}
+.pieza::before{content:"";position:absolute;inset:0;z-index:-1;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(135deg,var(--kinari) 0 50%,var(--washi2) 50% 100%)}
+.pieza .k{font-family:var(--mincho);font-weight:800;font-size:var(--fs-label);color:var(--murasaki)}
+.num{font-family:var(--mincho);font-weight:600;font-size:clamp(40px,1.3rem + 2.6vw,62px);line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.lbl{font-size:var(--fs-label);color:var(--sumi-suave);letter-spacing:.08em}
+.cuenta-nota{font-family:var(--mincho);font-size:clamp(19px,1rem + .6vw,24px);color:var(--sumi-suave)}
+
+/* ---------- Detalles ---------- */
+.detalles{--h1:var(--kinari);--h2:var(--washi2);--ang:20deg;padding:clamp(50px,8vw,100px) var(--gutter)}
+.det-wrap{max-width:66rem;margin:0 auto;display:grid;gap:clamp(30px,5vw,56px)}
+.det-head{display:grid;gap:12px;justify-items:center;text-align:center}
+.det-head h2{font-size:var(--fs-h2)}
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:clamp(28px,4vw,48px)}
+.dato{display:grid;gap:6px;justify-items:start;padding-left:18px;border-left:2px solid var(--fuji);min-width:0}
+.dato .k{font-family:var(--mincho);font-weight:800;font-size:clamp(24px,1rem + 1vw,30px);color:var(--murasaki);line-height:1}
+.dato h3{font-size:clamp(22px,1rem + .8vw,27px)}
+.dato p{color:var(--sumi-suave)}
+.enlace{color:var(--murasaki);font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+
+/* ---------- Programa ---------- */
+.programa{padding:clamp(50px,8vw,100px) var(--gutter)}
+.prog-wrap{max-width:46rem;margin:0 auto;display:grid;gap:clamp(24px,4vw,40px)}
+.prog-wrap > div:first-child{display:grid;gap:12px;justify-items:center;text-align:center}
+.programa h2{font-size:var(--fs-h2)}
+.linea{--col:clamp(56px,8vw,78px);--gap:clamp(22px,3.4vw,34px);list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.linea::before{content:"";position:absolute;left:calc(var(--col) + var(--gap) / 2);top:10px;bottom:10px;width:1px;background:var(--fuji)}
+.linea li{position:relative;display:grid;grid-template-columns:var(--col) 1fr;gap:var(--gap);padding:14px 0;align-items:start}
+.linea li::after{content:"";position:absolute;left:calc(var(--col) + var(--gap) / 2 - 4px);top:calc(14px + .6em);width:9px;height:9px;background:var(--murasaki);transform:rotate(45deg)}
+.linea time{font-family:var(--mincho);font-weight:600;font-size:clamp(19px,1rem + .4vw,22px);color:var(--murasaki);text-align:right;font-variant-numeric:lining-nums tabular-nums}
+.linea .txt{position:relative;min-width:0}
+.linea h3{font-size:clamp(21px,1rem + .6vw,25px)}
+.linea p{color:var(--sumi-suave)}
+
+/* ---------- Confirmar ---------- */
+.confirmar{--h1:var(--sumi);--h2:#2B2622;--ang:200deg;color:var(--kinari);padding:clamp(60px,9vw,120px) var(--gutter);text-align:center;overflow:hidden}
+.conf-wrap{max-width:40rem;margin:0 auto;display:grid;gap:clamp(16px,3vw,26px);justify-items:center}
+.confirmar .rotulo{color:var(--kin-claro)}
+.confirmar h2{font-size:var(--fs-h2)}
+.confirmar p{color:color-mix(in srgb,var(--kinari) 85%,transparent)}
+.tel{font-family:var(--mincho);font-size:clamp(28px,1rem + 2vw,40px);color:var(--kin-claro)!important;user-select:all;font-variant-numeric:lining-nums tabular-nums}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{font:inherit;font-weight:700;font-size:var(--fs-label);letter-spacing:.06em;cursor:pointer;border:0;padding:14px 26px;background:var(--fuji);color:var(--sumi);text-decoration:none;clip-path:polygon(0 0,100% 0,100% 70%,92% 100%,0 100%);transition:background .2s}
+.btn:hover{background:var(--kinari)}
+.btn.linea-btn{background:transparent;color:var(--kinari);box-shadow:inset 0 0 0 1.5px var(--kin-claro);clip-path:none}
+.btn.linea-btn:hover{background:color-mix(in srgb,var(--kin-claro) 18%,transparent)}
+.btn:focus-visible,.enlace:focus-visible{outline:2px solid var(--kin);outline-offset:4px}
+.aviso{font-size:var(--fs-label);min-height:1.6em;color:var(--kin-claro)!important}
+.firma{font-family:var(--mincho);font-size:clamp(20px,1rem + .8vw,26px);color:var(--kinari)!important}
+
+/* ---------- Guirnaldas de grullas (senbazuru) ---------- */
+.guirnalda{position:absolute;top:0;display:grid;justify-items:center;transform-origin:50% 0;animation:columpio var(--t,6s) ease-in-out infinite alternate;pointer-events:none;z-index:0}
+.guirnalda::before{content:"";position:absolute;top:0;bottom:12px;left:50%;width:1px;background:color-mix(in srgb,var(--sumi) 45%,transparent)}
+.guirnalda svg{position:relative;width:var(--w,clamp(54px,5.5vw,82px));overflow:visible;margin-top:var(--sep,clamp(18px,3vw,34px));filter:drop-shadow(0 6px 6px rgba(40,25,60,.18));animation:giro var(--tg,4s) ease-in-out infinite alternate}
+.guirnalda svg:nth-child(even){animation-direction:alternate-reverse}
+.guirnalda .cuenta-bead{width:7px;height:7px;border-radius:50%;background:var(--kin);margin-top:6px;position:relative}
+@keyframes columpio{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+@keyframes giro{from{transform:perspective(300px) rotateY(-35deg)}to{transform:perspective(300px) rotateY(35deg)}}
+
+/* grullas que cruzan */
+.cruza{position:absolute;width:clamp(56px,6vw,90px);overflow:visible;pointer-events:none;animation:cruzar var(--t,28s) linear var(--del,0s) infinite;z-index:0;filter:drop-shadow(0 8px 8px rgba(40,25,60,.18))}
+@keyframes cruzar{
+  0%{transform:translate(110vw,0) rotate(-4deg)}
+  25%{transform:translate(75vw,-30px) rotate(3deg)}
+  50%{transform:translate(40vw,10px) rotate(-3deg)}
+  75%{transform:translate(5vw,-24px) rotate(4deg)}
+  100%{transform:translate(-30vw,0) rotate(-2deg)}}
+
+/* ---------- Tradición (fotos con esquina doblada) ---------- */
+.tradicion{padding:clamp(50px,8vw,100px) var(--gutter);position:relative;overflow:hidden}
+.trad-wrap{max-width:70rem;margin:0 auto;display:grid;gap:clamp(28px,4vw,48px);position:relative;z-index:1}
+.trad-head{display:grid;gap:12px;justify-items:center;text-align:center}
+.tradicion h2{font-size:var(--fs-h2)}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:clamp(24px,4vw,44px);align-items:start}
+.pliego{margin:0;display:grid;gap:12px;perspective:900px}
+.pliego .hoja-foto{position:relative;animation:papel var(--t,7s) ease-in-out infinite alternate;transform-origin:50% 0;filter:drop-shadow(0 16px 22px rgba(60,40,80,.2))}
+.pliego:nth-child(2) .hoja-foto{--t:8.5s;margin-top:clamp(0px,4vw,48px)}
+.pliego:nth-child(3) .hoja-foto{--t:6.5s}
+@keyframes papel{from{transform:rotateX(4deg) rotateY(-7deg) rotate(-1deg)}to{transform:rotateX(-3deg) rotateY(7deg) rotate(1deg)}}
+.hoja-foto img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;clip-path:polygon(0 0,82% 0,100% 15%,100% 100%,0 100%)}
+.hoja-foto::after{content:"";position:absolute;top:0;right:0;width:18%;aspect-ratio:1;background:linear-gradient(225deg,transparent 50%,var(--fold,var(--fuji)) 50%);filter:drop-shadow(-3px 4px 3px rgba(40,25,60,.25));transform-origin:100% 0;animation:esquina 3.5s ease-in-out infinite alternate}
+@keyframes esquina{to{transform:scale(1.18)}}
+.pliego:nth-child(2) .hoja-foto::after{--fold:var(--kin-claro)}
+.pliego:nth-child(3) .hoja-foto::after{--fold:#E9A497}
+.pliego figcaption{display:grid;gap:2px}
+.pliego figcaption b{font-family:var(--mincho);font-weight:600;font-size:clamp(22px,1rem + .8vw,27px);color:var(--sumi)}
+.pliego figcaption span{color:var(--sumi-suave)}
+.pliego .k{font-family:var(--mincho);font-weight:800;color:var(--murasaki);margin-right:.35em}
+
+/* movimiento extra */
+.koki-kanji span{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.koki-kanji span:hover{transform:translateY(-8px) rotate(-3deg)}
+.pieza{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pieza:hover{transform:perspective(400px) rotateY(180deg)}
+.pieza:hover > *{opacity:0}
+.hanko{animation:sello 4s ease-in-out infinite alternate}
+@keyframes sello{to{transform:rotate(3deg) scale(1.05)}}
+
+@media (max-width:640px){.guirnalda.solo-ancho{display:none}}
+
+@media (min-width:860px){
+  .portada-grid{grid-template-columns:auto 1fr}
+  .portada-txt{justify-items:start;text-align:left}
+  .koki-wrap{grid-template-columns:1.3fr 1fr}
+}
+@media (orientation:landscape) and (max-height:560px){
+  .portada{padding-block:28px 60px}
+  .portada-grid{grid-template-columns:auto 1fr}
+  .portada-txt{justify-items:start;text-align:left}
+  .tategaki{font-size:clamp(70px,24vh,120px)}
+  h1{font-size:clamp(36px,11vh,64px)}
+  .reloj{flex-wrap:nowrap}
+  .pieza{width:clamp(96px,22vh,130px)}
+  .koki-wrap{grid-template-columns:1.3fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- grulla de origami: facetas claras y sombra de cada pliegue -->
+    <g id="tsuru">
+      <polygon class="ala" points="100,82 58,14 96,92" fill="var(--c1)"/>
+      <polygon class="ala d" points="100,82 152,6 108,94" fill="var(--c2)"/>
+      <polygon points="100,82 152,6 124,60" fill="var(--c3)" class="ala d"/>
+      <polygon points="70,100 100,80 130,100 100,120" fill="var(--c2)"/>
+      <polygon points="70,100 100,80 100,120" fill="var(--c1)"/>
+      <polygon points="72,100 28,38 84,96" fill="var(--c1)"/>
+      <polygon points="28,38 14,52 34,46" fill="var(--c3)"/>
+      <polygon points="128,100 176,46 118,96" fill="var(--c2)"/>
+      <polygon points="128,100 176,46 136,92" fill="var(--c3)"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="portada">
+  <div class="guirnalda " style="right:12%;--t:6.5s" aria-hidden="true">
+    <svg viewBox="0 0 190 130" style="--c1:#B7A3D3;--c2:#7A57A0;--c3:#5B3A78;--tg:3.0s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#E8D3A2;--c2:#C9A55E;--c3:#9C7B3A;--tg:3.6s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#E9877A;--c2:#C23B2B;--c3:#962A1E;--tg:4.2s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#FFFFFF;--c2:#E5DED0;--c3:#C9BFAE;--tg:4.8s"><use href="#tsuru"/></svg>
+  </div>
+  <div class="guirnalda solo-ancho" style="right:26%;--t:7.5s;--sep:clamp(30px,5vw,60px)" aria-hidden="true">
+    <svg viewBox="0 0 190 130" style="--c1:#E8D3A2;--c2:#C9A55E;--c3:#9C7B3A;--tg:3.0s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#FFFFFF;--c2:#E5DED0;--c3:#C9BFAE;--tg:3.6s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#B7A3D3;--c2:#7A57A0;--c3:#5B3A78;--tg:4.2s"><use href="#tsuru"/></svg>
+  </div>
+  <svg class="cruza" viewBox="0 0 190 130" aria-hidden="true" style="top:22%;left:0;--t:30s;--c1:#E8D3A2;--c2:#C9A55E;--c3:#9C7B3A"><use href="#tsuru"/></svg>
+  <svg class="cruza" viewBox="0 0 190 130" aria-hidden="true" style="top:58%;left:0;--t:38s;--del:-14s;width:clamp(40px,4vw,60px);--c1:#B7A3D3;--c2:#7A57A0;--c3:#5B3A78"><use href="#tsuru"/></svg>
+  <svg class="grulla vuela g1" viewBox="0 0 190 130" aria-hidden="true" style="--c1:#7A57A0;--c2:#5B3A78;--c3:#43295A"><g class="armado"><use href="#tsuru"/></g></svg>
+  <svg class="grulla vuela g2" viewBox="0 0 190 130" aria-hidden="true" style="--c1:#D9C08A;--c2:#B08D4A;--c3:#8C6E35"><use href="#tsuru"/></svg>
+  <svg class="grulla vuela g3" viewBox="0 0 190 130" aria-hidden="true" style="--c1:#E06A57;--c2:#C23B2B;--c3:#962A1E;transform:scaleX(-1)"><use href="#tsuru"/></svg>
+
+  <div class="portada-grid">
+    <p class="tategaki" lang="ja">古希<small>お祝い</small></p>
+    <div class="portada-txt">
+      <span class="rotulo">Celebración de 70 años</span>
+      <h1><em>Con mucho cariño, la familia invita a celebrar a la</em>Señora Keiko Watanabe</h1>
+      <p class="bajada">Setenta años de historias, viajes y familia. Nos encantaría que nos acompañe.</p>
+      <p class="fecha-hero">Sábado 12 <span>·</span> diciembre <span>·</span> 2026</p>
+      <div class="hanko" lang="ja" aria-label="Sello: celebración">祝</div>
+    </div>
+  </div>
+</header>
+
+<section class="koki hoja" id="koki">
+  <div class="koki-wrap">
+    <div class="koki-txt">
+      <span class="rotulo">Koki</span>
+      <h2>Los 70 en Japón</h2>
+      <p>En Japón, los 70 años se llaman <b>koki</b>. El nombre viene de un poema chino del siglo VIII que decía que llegar a los setenta era raro desde la antigüedad.</p>
+      <p>El color del koki es el <b>morado</b>, que se reserva para las personas de mayor respeto. Y las grullas de papel, que según la tradición viven mil años, se regalan para desear salud y vida larga.</p>
+    </div>
+    <div class="koki-kanji" lang="ja">
+      <span>古<small>antiguo</small></span>
+      <span>希<small>raro</small></span>
+    </div>
+  </div>
+</section>
+
+<section class="tradicion" id="tradicion">
+  <svg class="cruza" viewBox="0 0 190 130" aria-hidden="true" style="top:10%;left:0;--t:34s;--del:-6s;--c1:#E9877A;--c2:#C23B2B;--c3:#962A1E"><use href="#tsuru"/></svg>
+  <div class="trad-wrap">
+    <div class="trad-head">
+      <span class="rotulo">Tradición</span>
+      <h2>Una noche japonesa</h2>
+    </div>
+    <div class="galeria">
+      <figure class="pliego"><div class="hoja-foto"><img src="fotos/grullas.jpg" alt="Montón de grullas de origami de muchos colores" loading="lazy"></div>
+        <figcaption><b><span class="k" lang="ja">鶴</span>Grullas</b><span>Según la tradición, quien dobla mil grullas puede pedir un deseo. Esa noche juntaremos las nuestras para ella.</span></figcaption></figure>
+      <figure class="pliego"><div class="hoja-foto"><img src="fotos/te.jpg" alt="Mujer en kimono preparando la ceremonia del té" loading="lazy"></div>
+        <figcaption><b><span class="k" lang="ja">茶</span>Té</b><span>El chanoyu es un ritual de calma y respeto. Cada gesto se hace pensando en el invitado.</span></figcaption></figure>
+      <figure class="pliego"><div class="hoja-foto"><img src="fotos/jardin.jpg" alt="Jardín japonés con puente rojo sobre un estanque" loading="lazy"></div>
+        <figcaption><b><span class="k" lang="ja">庭</span>Jardín</b><span>Los jardines japoneses invitan a ir despacio. Así queremos que sea esta celebración.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="cuenta" id="cuenta">
+  <div class="cuenta-wrap">
+    <span class="rotulo">Faltan</span>
+    <h2>Para el gran día</h2>
+    <div class="reloj" role="timer" aria-live="off">
+      <div class="pieza"><span class="k" lang="ja">日</span><span class="num" id="d">00</span><span class="lbl">días</span></div>
+      <div class="pieza"><span class="k" lang="ja">時</span><span class="num" id="h">00</span><span class="lbl">horas</span></div>
+      <div class="pieza"><span class="k" lang="ja">分</span><span class="num" id="m">00</span><span class="lbl">minutos</span></div>
+      <div class="pieza"><span class="k" lang="ja">秒</span><span class="num" id="s">00</span><span class="lbl">segundos</span></div>
+    </div>
+    <p class="cuenta-nota" id="cuentaNota">Ya estamos doblando las grullas.</p>
+  </div>
+</section>
+
+<section class="detalles hoja" id="detalles">
+  <div class="det-wrap">
+    <div class="det-head">
+      <span class="rotulo">Detalles</span>
+      <h2>La celebración</h2>
+    </div>
+    <div class="datos">
+      <div class="dato"><span class="k" lang="ja">日</span><h3>Fecha</h3><p>Sábado 12 de diciembre de 2026</p></div>
+      <div class="dato"><span class="k" lang="ja">時</span><h3>Hora</h3><p>7:00 p. m.</p></div>
+      <div class="dato"><span class="k" lang="ja">所</span><h3>Lugar</h3><p>Embajada del Japón, Tegucigalpa<br><a class="enlace" href="https://maps.google.com/?q=Embajada+del+Japon+Tegucigalpa" target="_blank" rel="noopener">Abrir en el mapa</a></p></div>
+      <div class="dato"><span class="k" lang="ja">装</span><h3>Vestimenta</h3><p>Formal. Si lo desea, lleve un detalle morado en honor al koki.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="programa" id="programa">
+  <div class="prog-wrap">
+    <div>
+      <span class="rotulo">Programa</span>
+      <h2>La noche</h2>
+    </div>
+    <ol class="linea">
+      <li><time>7:00</time><div class="txt"><h3>Recepción</h3><p>Le recibimos con té verde y wagashi, los dulces japoneses de temporada.</p></div></li>
+      <li><time>7:45</time><div class="txt"><h3>Ceremonia del té</h3><p>Una demostración breve del chanoyu, preparada en honor a la señora Keiko.</p></div></li>
+      <li><time>8:15</time><div class="txt"><h3>Kanpai</h3><p>Brindis con sake y unas palabras de la familia.</p></div></li>
+      <li><time>8:30</time><div class="txt"><h3>Cena</h3><p>Menú japonés de varios tiempos, con opciones para cada invitado.</p></div></li>
+      <li><time>9:45</time><div class="txt"><h3>Mil grullas</h3><p>Cada invitado deja una grulla de papel con un deseo para ella. Tendremos papel en las mesas.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="confirmar hoja" id="confirmar">
+  <div class="guirnalda solo-ancho" style="left:4%;--t:6s" aria-hidden="true">
+    <svg viewBox="0 0 190 130" style="--c1:#FFFFFF;--c2:#E5DED0;--c3:#C9BFAE;--tg:3.0s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#E8D3A2;--c2:#C9A55E;--c3:#9C7B3A;--tg:3.6s"><use href="#tsuru"/></svg>
+    <svg viewBox="0 0 190 130" style="--c1:#B7A3D3;--c2:#7A57A0;--c3:#5B3A78;--tg:4.2s"><use href="#tsuru"/></svg>
+  </div>
+  <svg class="grulla vuela" viewBox="0 0 190 130" aria-hidden="true" style="width:clamp(90px,12vw,150px);right:4%;top:8%;--c1:#B7A3D3;--c2:#7A57A0;--c3:#5B3A78"><use href="#tsuru"/></svg>
+  <div class="conf-wrap">
+    <span class="rotulo">Confirmación</span>
+    <h2>Le esperamos</h2>
+    <p>Por favor confirme su asistencia antes del 1 de diciembre. Los cupos de la embajada son limitados y cada invitado debe estar en la lista.</p>
+    <p class="tel" id="tel">+504 9999-9999</p>
+    <div class="acciones">
+      <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+      <button class="btn linea-btn" type="button" id="copiar">Copiar número</button>
+    </div>
+    <p class="aviso" id="aviso" role="status"></p>
+    <p class="firma">Con cariño, la familia Watanabe</p>
+  </div>
+</section>
+
+<script>
+const EVENTO = {
+  nombre: 'la señora Keiko',
+  inicio: '2026-12-12T19:00:00-06:00',
+  telefono: '+504 9999-9999'
+};
+const $ = id => document.getElementById(id);
+const meta = new Date(EVENTO.inicio).getTime();
+const dos = n => String(n).padStart(2, '0');
+function tic(){
+  let t = Math.max(0, meta - Date.now());
+  const d = Math.floor(t / 864e5); t -= d * 864e5;
+  const h = Math.floor(t / 36e5);  t -= h * 36e5;
+  const m = Math.floor(t / 6e4);   t -= m * 6e4;
+  $('d').textContent = dos(d); $('h').textContent = dos(h);
+  $('m').textContent = dos(m); $('s').textContent = dos(Math.floor(t / 1e3));
+  if (meta - Date.now() <= 0) $('cuentaNota').textContent = '¡Hoy celebramos!';
+}
+tic(); setInterval(tic, 1000);
+$('wa').href = 'https://wa.me/' + EVENTO.telefono.replace(/\D/g, '') + '?text=' +
+  encodeURIComponent('Buenas, confirmo mi asistencia a la celebración de los 70 años de ' + EVENTO.nombre + '.');
+$('copiar').addEventListener('click', () => {
+  const ok = () => $('aviso').textContent = 'Número copiado: ' + EVENTO.telefono;
+  const no = () => $('aviso').textContent = 'Copie este número: ' + EVENTO.telefono;
+  try { navigator.clipboard.writeText(EVENTO.telefono).then(ok, no); } catch (e) { no(); }
+});
+</script>
+
+</body>
+</html>
