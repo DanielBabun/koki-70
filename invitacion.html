@@ -194,6 +194,24 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
 
 @media (max-width:640px){.guirnalda.solo-ancho{display:none}}
 
+/* ---------- Formulario de confirmación ---------- */
+.rsvp{width:100%;max-width:34rem;display:grid;gap:16px;text-align:left;background:var(--kinari);color:var(--sumi);padding:clamp(20px,4vw,32px);clip-path:polygon(0 0,92% 0,100% 7%,100% 100%,0 100%)}
+.rsvp label{display:grid;gap:6px;font-weight:700;font-size:var(--fs-label)}
+.rsvp input,.rsvp textarea{font:inherit;font-size:16px;color:var(--sumi);background:var(--washi);border:0;border-bottom:1.5px solid var(--fuji);padding:10px 4px;width:100%}
+.rsvp input:focus-visible,.rsvp textarea:focus-visible{outline:2px solid var(--murasaki);outline-offset:2px}
+.rsvp textarea{min-height:80px;resize:vertical}
+.rsvp .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rsvp fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.rsvp legend{font-weight:700;font-size:var(--fs-label);margin-bottom:6px}
+.rsvp .opcion input{position:absolute;opacity:0;pointer-events:none}
+.rsvp .opcion span{display:inline-block;padding:10px 18px;border:1.5px solid var(--murasaki);color:var(--murasaki);cursor:pointer;font-weight:500}
+.rsvp .opcion input:checked + span{background:var(--murasaki);color:var(--kinari)}
+.rsvp .opcion input:focus-visible + span{outline:2px solid var(--kin);outline-offset:2px}
+.rsvp .btn{justify-self:start;background:var(--murasaki);color:var(--kinari)}
+.rsvp .btn:hover{background:var(--murasaki2)}
+.rsvp [data-rsvp-aviso]{font-family:var(--mincho);color:var(--murasaki)!important;min-height:1.5em}
+.trampa{position:absolute;left:-9999px}
+
 @media (min-width:860px){
   .portada-grid{grid-template-columns:auto 1fr auto}
   .portada-txt{justify-items:start;text-align:left}
@@ -351,9 +369,25 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
     <span class="rotulo">Confirmación</span>
     <h2>Le esperamos</h2>
     <p>Por favor confirme su asistencia antes del 1 de diciembre. Reservamos el salón con cupo limitado y necesitamos el número exacto de invitados.</p>
+    <form class="rsvp" data-rsvp="koki-70" data-rsvp-si="Gracias por confirmar. Será un honor recibirle." data-rsvp-no="Gracias por avisarnos. La familia le enviará un saludo de su parte.">
+      <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
+      <fieldset><legend>¿Nos acompaña?</legend>
+        <label class="opcion"><input type="radio" name="asiste" value="si" checked><span>Con gusto asistiré</span></label>
+        <label class="opcion"><input type="radio" name="asiste" value="no"><span>No podré asistir</span></label>
+      </fieldset>
+      <div class="dos">
+        <label>Personas<input name="personas" type="number" min="1" max="20" value="1" inputmode="numeric"></label>
+        <label>Teléfono<input name="telefono" type="tel" autocomplete="tel" placeholder="Opcional"></label>
+      </div>
+      <label>Un deseo para la señora Keiko<textarea name="mensaje" placeholder="Opcional"></textarea></label>
+      <input class="trampa" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Confirmar asistencia</button>
+      <p data-rsvp-aviso role="status"></p>
+    </form>
+    <p>¿Prefiere escribirnos?</p>
     <p class="tel" id="tel">+504 9999-9999</p>
     <div class="acciones">
-      <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+      <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
       <button class="btn linea-btn" type="button" id="copiar">Copiar número</button>
     </div>
     <p class="aviso" id="aviso" role="status"></p>
@@ -388,3 +422,4 @@ $('copiar').addEventListener('click', () => {
   try { navigator.clipboard.writeText(EVENTO.telefono).then(ok, no); } catch (e) { no(); }
 });
 </script>
+<script src="https://invitaciones-rsvp.vercel.app/rsvp.js" defer></script>
