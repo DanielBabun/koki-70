@@ -173,6 +173,16 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
 .pliego figcaption span{color:var(--sumi-suave)}
 .pliego .k{font-family:var(--mincho);font-weight:800;color:var(--murasaki);margin-right:.35em}
 
+/* retrato de la señora */
+.retrato{margin:0;width:clamp(230px,24vw,340px);max-width:100%;justify-self:center}
+.retrato .hoja-foto::after{--fold:var(--murasaki)}
+.retrato figcaption{text-align:center;justify-items:center}
+
+/* foto del lugar */
+.lugar{margin:8px 0 0;width:min(100%,360px)}
+.lugar .hoja-foto::after{--fold:var(--kin-claro)}
+.lugar figcaption{text-align:left}
+
 /* movimiento extra */
 .koki-kanji span{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .koki-kanji span:hover{transform:translateY(-8px) rotate(-3deg)}
@@ -185,13 +195,14 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
 @media (max-width:640px){.guirnalda.solo-ancho{display:none}}
 
 @media (min-width:860px){
-  .portada-grid{grid-template-columns:auto 1fr}
+  .portada-grid{grid-template-columns:auto 1fr auto}
   .portada-txt{justify-items:start;text-align:left}
   .koki-wrap{grid-template-columns:1.3fr 1fr}
 }
 @media (orientation:landscape) and (max-height:560px){
   .portada{padding-block:28px 60px}
-  .portada-grid{grid-template-columns:auto 1fr}
+  .portada-grid{grid-template-columns:auto 1fr auto}
+  .retrato{width:clamp(180px,30vh,240px)}
   .portada-txt{justify-items:start;text-align:left}
   .tategaki{font-size:clamp(70px,24vh,120px)}
   h1{font-size:clamp(36px,11vh,64px)}
@@ -246,6 +257,7 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
       <p class="fecha-hero">Sábado 12 <span>·</span> diciembre <span>·</span> 2026</p>
       <div class="hanko" lang="ja" aria-label="Sello: celebración">祝</div>
     </div>
+    <figure class="retrato pliego"><div class="hoja-foto"><img src="fotos/keiko.jpg" alt="Foto de la señora Keiko sonriendo"></div><figcaption><b><span class="k" lang="ja">七十</span>70 años</b></figcaption></figure>
   </div>
 </header>
 
@@ -301,11 +313,12 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
     <div class="det-head">
       <span class="rotulo">Detalles</span>
       <h2>La celebración</h2>
+      <figure class="lugar pliego"><div class="hoja-foto"><img src="fotos/lugar.jpg" alt="Barra de sushi con faroles de papel" loading="lazy"></div><figcaption><b><span class="k" lang="ja">所</span>Sushi Itto Altara</b><span>Centro Comercial Altara, San Pedro Sula</span></figcaption></figure>
     </div>
     <div class="datos">
       <div class="dato"><span class="k" lang="ja">日</span><h3>Fecha</h3><p>Sábado 12 de diciembre de 2026</p></div>
       <div class="dato"><span class="k" lang="ja">時</span><h3>Hora</h3><p>7:00 p. m.</p></div>
-      <div class="dato"><span class="k" lang="ja">所</span><h3>Lugar</h3><p>Embajada del Japón, Tegucigalpa<br><a class="enlace" href="https://maps.google.com/?q=Embajada+del+Japon+Tegucigalpa" target="_blank" rel="noopener">Abrir en el mapa</a></p></div>
+      <div class="dato"><span class="k" lang="ja">所</span><h3>Lugar</h3><p>Sushi Itto Altara<br>Centro Comercial Altara, San Pedro Sula<br><a class="enlace" href="https://maps.google.com/?q=Sushi+Itto+Altara+San+Pedro+Sula" target="_blank" rel="noopener">Abrir en el mapa</a></p></div>
       <div class="dato"><span class="k" lang="ja">装</span><h3>Vestimenta</h3><p>Formal. Si lo desea, lleve un detalle morado en honor al koki.</p></div>
     </div>
   </div>
@@ -337,7 +350,7 @@ h1 em{font-style:normal;display:block;font-size:.42em;color:var(--murasaki);lett
   <div class="conf-wrap">
     <span class="rotulo">Confirmación</span>
     <h2>Le esperamos</h2>
-    <p>Por favor confirme su asistencia antes del 1 de diciembre. Los cupos de la embajada son limitados y cada invitado debe estar en la lista.</p>
+    <p>Por favor confirme su asistencia antes del 1 de diciembre. Reservamos el salón con cupo limitado y necesitamos el número exacto de invitados.</p>
     <p class="tel" id="tel">+504 9999-9999</p>
     <div class="acciones">
       <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
